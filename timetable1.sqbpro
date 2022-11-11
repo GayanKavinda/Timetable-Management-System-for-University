@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/HASINI/Documents/GitHub/ITPM_R_64/timetable.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2198"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:mainbuilding"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE 'academic' (
+  'id' INTEGER PRIMARY KEY AUTOINCREMENT,
+  'ys' varchar(45) DEFAULT NULL
+);
+
+CREATE TABLE `degree_program` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `dp` varchar(45) DEFAULT NULL
+) ;
+
+CREATE TABLE `groupNo` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `gNo` varchar(45) DEFAULT NULL
+) ;
+
+CREATE TABLE `subGroupNo` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `sGno` INTEGER DEFAULT NULL
+) ;
+
+CREATE TABLE `group_id` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `gId` varchar(45) DEFAULT NULL
+ );
+
+CREATE TABLE `sub_group_id` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `subgId` varchar(45) DEFAULT NULL
+) ;
+
+CREATE TABLE `tag` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `tagId` varchar(45) DEFAULT NULL,
+   `subject` varchar(45) DEFAULT NULL,
+    `code` varchar(45) DEFAULT NULL,
+    `rTag` varchar(45) DEFAULT NULL
+) ;
+</sql><current_tab id="0"/></tab_sql></sqlb_project>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE XML>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<Querys>
+    
+    <query id="create_database">
+        <![CDATA[
+            CREATE DATABASE timetablemanagement
+        ]]>
+    </query>
+    
+    <query id="Insert_workingdays_and_hours">
+        <![CDATA[
+            INSERT INTO work_day_hour (days_no, days, hour, mins)VALUES (?, ?, ?, ?)
+        ]]>
+    </query>
+
+        
+        
+     <query id="insert_lecturer">
+        <![CDATA[
+            INSERT INTO lecturer (name,lect_id,faculty,department,center,building,level,rank)VALUES(?, ?, ?, ?, ?, ?, ?, ?)
+        ]]>
+    </query>
+    
+    <query id="get_lecturer">
+        <![CDATA[
+            SELECT * FROM lecturer
+        ]]>
+    </query>
+    
+    <query id="delete_lecturer">
+        <![CDATA[
+            DELETE FROM lecturer
+            WHERE id = ?
+        ]]>
+    </query>
+    
+    <query id="update_lecturer">
+        <![CDATA[
+            UPDATE lecturer
+                set name = ?,
+                lect_id = ?,
+                faculty = ?,
+                department = ?,
+                center = ?,
+                building = ?,
+                level = ?,
+                rank = ?
+            
+            where id = ?
+       ]]>
+    </query>
+    
+     <query id="insert_subject">
+        <![CDATA[
+            INSERT INTO 
+                subject (off_year, off_sem, sub_name, sub_code, lec_hr, tute_hr, lab_hr, eva_hr)
+                values(?,?,?,?,?,?,?,?)
+		]]>
+    </query>
+    
+    <query id="get_subjects">
+        <![CDATA[
+            SELECT * FROM subject
+        ]]>
+    </query>
+    
+    <query id="delete_subject">
+        <![CDATA[
+            DELETE FROM subject
+            WHERE id = ?
+        ]]>
+    </query>
+    
+    <query id="update_subject">
+        <![CDATA[
+            UPDATE subject
+                set off_year = ?,
+                off_sem = ?,
+                sub_name = ?,
+                sub_code = ?,
+                lec_hr = ?,
+                tute_hr = ?,
+                lab_hr = ?,
+                eva_hr = ?
+            
+            where id = ?
+       ]]>
+    </query>
+    
+     <query id="insert_session">
+        <![CDATA[
+            INSERT INTO 
+                session (lect, lect2, code, subject, tag, gID, nostudent, duration)
+                values(?,?,?,?,?,?,?,?)
+		]]>
+    </query>
+    
+    <query id="get_session">
+        <![CDATA[
+            SELECT * FROM session
+        ]]>
+    </query>
+    
+    <query id="delete_session">
+        <![CDATA[
+            DELETE FROM session
+            WHERE id = ?
+        ]]>
+    </query>
+    
+    <query id="update_session">
+        <![CDATA[
+            UPDATE session
+                set lect = ?,
+                lect2 = ?,
+                code = ?,
+                subject = ?,
+                tag = ?,
+                gID = ?,
+                nostudent = ?,
+                duration = ?
+            
+            where id = ?
+       ]]>
+    </query>
+
+
+    
+   
+     <query id="create_academic_semester">
+        <![CDATA[
+            create table academic(
+                id int AUTO_INCREMENT,
+                ys String,
+                
+                Constraint pk1 PRIMARY KEY (id)
+            )
+        ]]>
+    </query>
+    
+     <query id="Insert_academic_semester">
+        <![CDATA[
+            INSERT INTO academic (ys) VALUES (?)
+        ]]>
+    </query> 
+    
+    <query id="delete_academic_semester">
+        <![CDATA[
+            DELETE FROM academic
+            WHERE id = ?
+        ]]>
+    </query>
+    
+    
+     <query id="Insert_degree_program">
+        <![CDATA[
+            INSERT INTO degree_program (dp) VALUES (?)
+        ]]>
+    </query>  
+    
+    <query id="delete_degree_program">
+        <![CDATA[
+            DELETE FROM degree_program
+            WHERE id = ?
+        ]]>
+    </query>
+    
+    
+    <query id="Insert_group_number">
+        <![CDATA[
+            INSERT INTO groupNo (gNo) VALUES (?)
+        ]]>
+    </query>
+    
+    <query id="delete_group_number">
+        <![CDATA[
+            DELETE FROM groupNo
+            WHERE id = ?
+        ]]>
+    </query>
+    
+    <query id="Insert_sub_group_number">
+        <![CDATA[
+            INSERT INTO subGroupNo (sGno) VALUES (?)
+        ]]>
+    </query>
+    
+    <query id="delete_sub_group_number">
+        <![CDATA[
+            DELETE FROM subGroupNo
+            WHERE id = ?
+        ]]>
+    </query>
+    
+    
+    <query id="Insert_generated_group_id">
+        <![CDATA[
+            INSERT INTO group_id (gId) VALUES (?)
+        ]]>
+    </query>
+    
+    <query id="delete_group_id">
+        <![CDATA[
+            DELETE FROM group_id
+            WHERE id = ?
+        ]]>
+    </query>
+    
+    <query id="Insert_sub_group_id">
+        <![CDATA[
+            INSERT INTO sub_group_id (subgId) VALUES (?)
+        ]]>
+    </query>
+    
+     <query id="delete_sub_group_id">
+        <![CDATA[
+            DELETE FROM sub_group_id
+            WHERE id = ?
+        ]]>
+    </query>
+    
+    <query id="insert_tag">
+        <![CDATA[
+            INSERT INTO 
+                tag (tagId, subject , code, rTag)
+                values(?,?,?,?)
+		]]>
+    </query>
+    
+    <query id="get_tags">
+        <![CDATA[
+            SELECT * FROM tag
+        ]]>
+    </query>
+    
+     <query id="delete_tag">
+        <![CDATA[
+            DELETE FROM tag
+            WHERE id = ?
+        ]]>
+    </query>
+</Querys>

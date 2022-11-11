@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE XML>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<Querys>
+    <query id="create_database">
+        <![CDATA[
+            CREATE DATABASE timetablemanagement
+        ]]>
+    </query>
+    
+    <query id="Insert_workingdays_and_hours">
+        <![CDATA[
+            INSERT INTO work_day_hour (id, days_no, days, hour, mins, slot_type)VALUES (?, ?, ?, ?, ?, ?)
+        ]]>
+    </query
+    
+    <query id="Insert_WE_workingdays_and_hours_days">
+        <![CDATA[
+            INSERT INTO work_day_hour_days (id, parentID, day)VALUES (?, (select id from work_day_hour where id = 2), ?)
+        ]]>
+    </query>
+    
+    <query id="Insert_WD_workingdays_and_hours_days">
+        <![CDATA[
+            INSERT INTO work_day_hour_days (id, parentID, day)VALUES (?, (select id from work_day_hour where id = 1), ?)
+        ]]>
+    </query>
+    
+    <query id="Remove_workingdays_and_hours">
+        <![CDATA[
+            DELETE FROM work_day_hour
+            WHERE id = ?
+        ]]>
+    </query>
+    
+    <query id="Remove_workingdays_and_hours_days">
+        <![CDATA[
+            DELETE FROM work_day_hour_days
+            WHERE parentID = ?
+        ]]>
+    </query>
+    
+    <query id="Get_workingdays_and_hours">
+        <![CDATA[
+            SELECT *
+            FROM work_day_hour
+          ]]>
+    </query>
+    
+    <query id="Get_workingdays_and_hours_by_type">
+        <![CDATA[
+            SELECT *
+            FROM work_day_hour
+            WHERE id = ?
+        ]]>
+    </query>
+    
+</Querys>
+
